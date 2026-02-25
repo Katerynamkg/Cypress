@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-02-25T12:32:50.908Z",
+    "end": "2026-02-25T12:32:58.122Z",
+    "duration": 7214,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cdf8e62c-7798-40ec-835a-979516922251",
+      "title": "",
+      "fullFile": "cypress\\e2e\\testWithPOM.cy.js",
+      "file": "cypress\\e2e\\testWithPOM.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a7d08787-c628-4c2d-b54a-e9dd7f7b4e98",
+          "title": "SignIn",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success sign in",
+              "fullTitle": "SignIn Success sign in",
+              "timedOut": null,
+              "duration": 7122,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\testWithPOM.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\testWithPOM.cy.js\\\\SignIn -- Success sign in (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "_HomePage.default.visit();\n_HomePage.default.signInButton.click();\n_SignInForm.default.loginWithCredentials(_users.default.correctUser.email, _users.default.correctUser.password);\n// cy.get('button.header_signin').click()\n// SignInForm.emailField.type(\"test-mail8@yopmail.com\")\n// cy.get(\"#signinEmail\").type(\"test-mail8@yopmail.com\")\n// SignInForm.passwordField.type(\"Qwerty123\")\n// cy.get(\"#signinPassword\").type(\"Qwerty123\")\n// SignInForm.loginButton.click()\n// cy.get(\".modal-footer>.btn-primary\").click()\ncy.get(\"div.alert-success\").should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div.alert-success`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div.alert-success`, but never found it.\n    at Context.eval (webpack://cypress/./cypress/e2e/testWithPOM.cy.js:22:32)",
+                "diff": null
+              },
+              "uuid": "9a4ff715-f6b4-4462-99c9-cdd86d308fa5",
+              "parentUUID": "a7d08787-c628-4c2d-b54a-e9dd7f7b4e98",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9a4ff715-f6b4-4462-99c9-cdd86d308fa5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7122,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}

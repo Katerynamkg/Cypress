@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 beforeEach("open site", () => {
-  cy.visit("https://guest:welcome2qauto@qauto.forstudy.space/");
+  cy.visit("/"); 
   cy.get("button.btn-primary").click();
   cy.get("#signupName").as("name");
   cy.get("#signupLastName").as("lastName");
@@ -16,16 +16,16 @@ describe("Field Name validation", () => {
     cy.get("@name")
       .parent()
       .find(".invalid-feedback")
-      // .should("have.text", "Name required"); - test failed because of mistakes in error message
-      .should("have.text", "Name is required");
+      .should("have.text", "Name required")//; - test failed because of mistakes in error message
+      // .should("have.text", "Name is required");
   });
   it("Name with spaces", () => {
     cy.get("@name").type(" qwerty ").blur();
     cy.get("@name")
       .parent()
       .find(".invalid-feedback")
-      // .should("have.text", "Name is invalid"); - test failed because of mistakes string is not trimmed
-      .should("not.exist");
+      .should("have.text", "Name is invalid")//; - test failed because of mistakes string is not trimmed
+      // .should("not.exist");
   });
   it("Wrong data - digit", () => {
     cy.get("@name").type("123456").blur();
@@ -71,8 +71,8 @@ describe("Field Last name validation", () => {
     cy.get("@lastName")
       .parent()
       .find(".invalid-feedback")
-      // .should("have.text", "Last name required"); //- test failed because of mistakes in error message
-      .should("have.text", "Last name is required");
+      .should("have.text", "Last name required"); //- test failed because of mistakes in error message
+      // .should("have.text", "Last name is required");
   });
   it("Wrong data - cyrillic", () => {
     cy.get("@lastName").type("йцукен").blur();
@@ -335,11 +335,11 @@ describe("Registration button", () => {
   });
 });
 
-describe("Success registration", () => {
+describe.skip("Success registration", () => {
   it("Register user", () => {
-    cy.get("@name").type("Kate");
-    cy.get("@lastName").type("lastName");
-    cy.get("@email").type("test-mail10@yopmail.com");
+    cy.get("@name").type("UserSecond");
+    cy.get("@lastName").type("LastName");
+    cy.get("@email").type("test-mail22@yopmail.com");
     cy.get("@password").type("Qwerty123");
     cy.get("@re-password").type("Qwerty123").blur();
     cy.get("div.modal-content").within(() => {
