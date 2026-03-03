@@ -1,8 +1,44 @@
 node_modules
+
+# ignored test specs (training)
 search-element.cy.js
+search-elements.cy.js
 test.cy.js
 testWithPOM.cy.js
+form-validation.cy.js
+Success-login.cy.js
+
+# Cypress env
 cypress.env
-reports
-videos
-screenshots
+
+# Cypress artifacts
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# Mochawesome / reports
+reports/
+mochawesome-report/
+
+# ESLint cache
+.eslintcache
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# env
+.env
+.env.local
+
+eslint.config.mjs
+.husky/pre-commit
