@@ -1,29 +1,29 @@
 class AddAnExpenseForm {
   get vehicleField() {
-    return cy.get("#addExpenseCar");
+    return cy.get('#addExpenseCar');
   }
 
   get reportDateField() {
-    return cy.get("#addExpenseDate");
+    return cy.get('#addExpenseDate');
   }
 
   get mileageField() {
-    return cy.get("#addExpenseMileage");
+    return cy.get('#addExpenseMileage');
   }
 
   get numberOfLitersField() {
-    return cy.get("#addExpenseLiters");
+    return cy.get('#addExpenseLiters');
   }
 
   get totalCostField() {
-    return cy.get("#addExpenseTotalCost");
+    return cy.get('#addExpenseTotalCost');
   }
     get addButton(){
-        return cy.contains('.btn-primary', 'Add')
+        return cy.contains('.btn-primary', 'Add');
     }
 
   verifyIfAddAnExpenseFormOpened(){
-    cy.get('app-add-expense-modal').should('exist')
+    cy.get('app-add-expense-modal').should('exist');
   }
 
   selectVehicle(vehicle){
@@ -32,27 +32,27 @@ class AddAnExpenseForm {
     .contains(vehicle)
     .first()
     .then(opt => {
-        this.vehicleField.select(opt.val())
-    })
+        this.vehicleField.select(opt.val());
+    });
   }
   selectReportDate(date){
-    this.reportDateField.clear()
-    this.reportDateField.type(date)
+    this.reportDateField.clear();
+    this.reportDateField.type(date);
   }
 
   typeMileage(km){
-    this.mileageField.clear()
-    this.mileageField.type(km)
+    this.mileageField.clear();
+    this.mileageField.type(km);
   }
 
   typeLiters(ltr){
-    this.numberOfLitersField.clear()
-    this.numberOfLitersField.type(ltr)
+    this.numberOfLitersField.clear();
+    this.numberOfLitersField.type(ltr);
   }
 
   typeTotalCost(cost){
-    this.totalCostField.clear()
-    this.totalCostField.type(cost)
+    this.totalCostField.clear();
+    this.totalCostField.type(cost);
   }
 
   confirmAdding(){
@@ -60,9 +60,9 @@ class AddAnExpenseForm {
     cy.get('.modal-footer>.btn-primary')
     .should('be.visible')
     .and('not.be.disabled')
-    .click()
+    .click();
   }
 
 }
 
-export default new AddAnExpenseForm
+export default new AddAnExpenseForm;

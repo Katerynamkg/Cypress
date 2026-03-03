@@ -1,18 +1,18 @@
 class AddCarForm {
   get carBrandField() {
-    return cy.get("#addCarBrand");
+    return cy.get('#addCarBrand');
   }
 
   get carModelField() {
-    return cy.get("#addCarModel");
+    return cy.get('#addCarModel');
   }
 
   get mileageField() {
-    return cy.get("#addCarMileage");
+    return cy.get('#addCarMileage');
   }
 
   get submitAddButton() {
-    return cy.get(".modal-footer>.btn-primary");
+    return cy.get('.modal-footer>.btn-primary');
   }
 
   // select brand
