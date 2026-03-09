@@ -42,3 +42,5 @@ Thumbs.db
 
 eslint.config.mjs
 .husky/pre-commit
+
+cypress/e2e/Success-login.cy.js

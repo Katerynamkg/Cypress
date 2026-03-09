@@ -1,27 +1,27 @@
 /// <reference types="cypress" />
-import HomePage from "../pom/pages/HomePage";
-import SignInForm from "../pom/forms/SignInForm";
-import Garage from "../pom/pages/GaragePage";
-import AddCarForm from "../pom/forms/AddCarForm";
+import HomePage from '../pom/pages/HomePage';
+import SignInForm from '../pom/forms/SignInForm';
+import Garage from '../pom/pages/GaragePage';
+import AddCarForm from '../pom/forms/AddCarForm';
 
 
 const car = {
-  brand: "Fiat",
-  model: "Panda",
-  mileage: "55000"
-}
-describe("Garage", () => {
+  brand: 'Fiat',
+  model: 'Panda',
+  mileage: '55000'
+};
+describe('Garage', () => {
   beforeEach(() => {
     HomePage.visit();
     HomePage.signInButton.click();
     SignInForm.loginWithCredentials(
-      Cypress.env("userEmail"),
-      Cypress.env("userPassword"),
+      Cypress.env('userEmail'),
+      Cypress.env('userPassword'),
     );
-    cy.get("div.alert-success").should("be.visible");
+    cy.get('div.alert-success').should('be.visible');
   });
 
-  it("it should add car to garage", () => {
+  it('it should add car to garage', () => {
     Garage.openAddCarForm();
     AddCarForm.selectBrand(car.brand);
     AddCarForm.selectModel(car.model);
@@ -32,6 +32,6 @@ describe("Garage", () => {
   });
 
   after(() => {
-    Garage.deleteCar(car.brand, car.model)
+    Garage.deleteCar(car.brand, car.model);
   });
 });

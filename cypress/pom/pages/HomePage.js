@@ -1,12 +1,12 @@
 class HomePage {
   visit() {
-    cy.visit("/");
+    cy.visit('/');
   }
   get signInButton() {
-    return cy.get("button.header_signin");
+    return cy.get('button.header_signin');
   }
   openSignInFrom() {
-    cy.get("button").contains("Login").click();
+    cy.get('button').contains('Login').click();
   }
 }
 
