@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import users from "../fixtures/users.json";
+import users from '../fixtures/users.json';
 
 // beforeAll(() => {
 //   HomePage.visit();
@@ -11,15 +11,15 @@ import users from "../fixtures/users.json";
 //   cy.get('div.alert-success').should('be.visible');
 // });
 
-describe("Publick API requests", () => {
+describe('Publick API requests', () => {
   let sid;
   before(() => {
-    cy.request("POST", "api/auth/signin", {
+    cy.request('POST', 'api/auth/signin', {
       email: users.correctUser.email,
       password: users.correctUser.password,
     }).then((response) => {
       const headers = response.headers;
-      sid = JSON.stringify(headers["set-cookie"][0].split(";")[0]);
+      sid = JSON.stringify(headers['set-cookie'][0].split(';')[0]);
       // cy.log(sid);
     });
   });
@@ -30,21 +30,21 @@ describe("Publick API requests", () => {
   //     cy.log(JSON.stringify(cars));
   //     expect(cars).to.have.length;
   //   });
-  it("Add car", () => {
+  it('Add car', () => {
     cy.request({
-      url: "api/cars",
-      method: "POST", 
+      url: 'api/cars',
+      method: 'POST', 
       body:{
         carBrandId: 1,
         carModelId: 1,
         mileage: 99999,
       },
       headers:{
-        "Cookie": sid
+        'Cookie': sid
       }
 
     }).then((response)=> {
-      cy.log(JSON.stringify(response))
+      cy.log(JSON.stringify(response));
     });
   });
   });
