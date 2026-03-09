@@ -82,6 +82,7 @@ describe('Publick API requests', () => {
     });
   });
 
+
   //   it.only("delete car", ()=>{
   //       cy.request({
   //         url: "/cars/{id}",
